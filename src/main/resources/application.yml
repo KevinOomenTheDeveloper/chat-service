@@ -1,0 +1,14 @@
+server:
+  port: 9012
+
+spring:
+  application:
+    name: CHAT-SERVICE
+
+keycloak:
+  realm: ${KEYCLOAK_REALM}
+  auth-server-url: ${KEYCLOAK_SERVER_URL}
+  resource: ${KEYCLOAK_RESOURCE}
+  credentials.secret: ${KEYCLOAK_SECRET}
+  public-client: true
+  bearer-only: true
