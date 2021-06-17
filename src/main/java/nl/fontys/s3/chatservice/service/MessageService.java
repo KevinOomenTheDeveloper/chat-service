@@ -5,6 +5,8 @@ import nl.fontys.s3.chatservice.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MessageService {
 
@@ -15,8 +17,11 @@ public class MessageService {
         return messageRepository.save(message);
     }
 
-    public void deleteMessageById(Long messageId)
-    {
-        messageRepository.deleteById(messageId);
+    public Message getMessage(long messageId) {
+        return messageRepository.findById(messageId).get();
+    }
+
+    public List<Message> getLogs(String userId) {
+        return messageRepository.findByUserId(userId);
     }
 }

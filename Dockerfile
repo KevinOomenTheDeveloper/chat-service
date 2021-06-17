@@ -2,7 +2,7 @@
 FROM maven:3.8.1-openjdk-15 as BUILD
 
 COPY . /usr/src/app
-RUN mvn --batch-mode -f /usr/src/app/pom.xml clean package
+RUN mvn --batch-mode -f /usr/src/app/pom.xml clean package -Dmaven.test.skip=true
 
 FROM openjdk:15-jdk
 COPY --from=BUILD /usr/src/app/target /opt/target

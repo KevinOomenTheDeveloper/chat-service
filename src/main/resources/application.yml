@@ -10,5 +10,4 @@ keycloak:
   auth-server-url: ${KEYCLOAK_SERVER_URL}
   resource: ${KEYCLOAK_RESOURCE}
   credentials.secret: ${KEYCLOAK_SECRET}
-  public-client: true
-  bearer-only: true
+  public-client: false

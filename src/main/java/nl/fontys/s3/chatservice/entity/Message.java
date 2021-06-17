@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -16,8 +13,10 @@ import javax.persistence.Id;
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String name;
-    private String user_id;
+    private Long messageId;
+    @Column(length=500)
+    private String description;
+    @Column(length=36)
+    private String userId;
 
 }
