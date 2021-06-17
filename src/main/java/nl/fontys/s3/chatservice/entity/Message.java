@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long messageId;
     @Column(length=500)
     private String description;
     @Column(length=36)

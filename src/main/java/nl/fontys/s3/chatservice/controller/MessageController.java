@@ -47,6 +47,4 @@ public class MessageController {
         message.setUserId(id);
         return messageService.saveMessage(message);
     }
-
-
 }
