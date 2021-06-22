@@ -18,7 +18,7 @@ public class MessageService {
     }
 
     public Message getMessage(long messageId) {
-        return messageRepository.findById(messageId).get();
+        return messageRepository.findById(messageId).orElse(null);
     }
 
     public List<Message> getLogs(String userId) {
