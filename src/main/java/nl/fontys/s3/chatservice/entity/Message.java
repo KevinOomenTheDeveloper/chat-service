@@ -19,4 +19,9 @@ public class Message {
     @Column(length=36)
     private String userId;
 
+    public Message(String description, String userId) {
+        this.description = description;
+        this.userId = userId;
+    }
+
 }
